@@ -1,6 +1,11 @@
 import * as SQLite from 'expo-sqlite';
 
 /**
+ * SQLiteと接続
+ */
+const db = SQLite.openDatabase('db');
+
+/**
  * テーブルを作成する
  */
 function createTable() {
