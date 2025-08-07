@@ -1,13 +1,4 @@
-import * as SQLite from "expo-sqlite";
-
-/**
- * SQLiteと接続
- */
-const db = SQLite.openDatabase("db");
-createTable(); // 「sample_table」というテーブル作成
-insert(1, "Taro"); // 「id=1, name=Taro」のデータを登録
-insert(2, "Jiro"); // 「id=2, name=Jiro」のデータを登録
-select(); // データを取得してログに表示
+import * as SQLite from 'expo-sqlite';
 
 /**
  * テーブルを作成する
@@ -22,11 +13,11 @@ function createTable() {
       [],
       // 成功時のコールバック関数
       () => {
-        console.log("create table success");
+        console.log('create table success');
       },
       () => {
         // 失敗時のコールバック関数
-        console.log("create table faile");
+        console.log('create table faile');
         return false;
       }
     );
@@ -46,11 +37,11 @@ function insert(id, name) {
       [id, name],
       // 成功時のコールバック関数
       () => {
-        console.log("insert success");
+        console.log('insert success');
       },
       () => {
         // 失敗時のコールバック関数
-        console.log("insert faile");
+        console.log('insert faile');
         return false;
       }
     );
@@ -69,12 +60,12 @@ function select() {
       [],
       // 成功時のコールバック関数
       (_, { rows }) => {
-        console.log("select success");
-        console.log("select result:" + JSON.stringify(rows._array));
+        console.log('select success');
+        console.log('select result:' + JSON.stringify(rows._array));
       },
       () => {
         // 失敗時のコールバック関数
-        console.log("select faile");
+        console.log('select faile');
         return false;
       }
     );
