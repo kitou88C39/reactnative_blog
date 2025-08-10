@@ -10,16 +10,6 @@ export default function TabOneScreen() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [inputText, setInputText] = useState('');
 
-  // データベースからタスクを読み込む関数
-  const loadTodos = useCallback(async () => {
-    try {
-      const fetchedTodos = (await fetchTodos()) as Todo[];
-      setTodos(fetchedTodos);
-    } catch (err) {
-      console.error('Failed to fetch todos', err);
-    }
-  }, []);
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>タスク一覧</Text>
