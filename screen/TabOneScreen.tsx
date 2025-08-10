@@ -6,9 +6,10 @@ import { RootTabScreenProps } from '../types';
 
 import { createTable, insert, select } from '../helpers/sqlite';
 
-export default function TabOneScreen() {
-  const [todos, setTodos] = useState<Todo[]>([]);
-  const [inputText, setInputText] = useState('');
+export default function TabOneScreen({
+  navigation,
+}: RootTabScreenProps<'TabOne'>) {
+  createTable();
 
   return (
     <View style={styles.container}>
