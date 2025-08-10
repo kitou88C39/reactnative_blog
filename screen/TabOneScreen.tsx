@@ -2,14 +2,9 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import { RootTabScreenProps } from '../types';
 
 import { createTable, insert, select } from '../helpers/sqlite';
-
-// タスクの型定義
-interface Todo {
-  id: number;
-  text: string;
-}
 
 export default function TabOneScreen() {
   const [todos, setTodos] = useState<Todo[]>([]);
