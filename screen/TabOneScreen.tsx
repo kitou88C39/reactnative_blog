@@ -15,16 +15,6 @@ export default function TabOneScreen({
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
       <View style={styles.inputContainer}></View>
-      <FlatList
-        data={todos}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => (
-          <View style={styles.todoItem}>
-            <Text>{item.text}</Text>
-          </View>
-        )}
-        style={styles.list}
-      />
     </View>
   );
 }
