@@ -20,31 +20,6 @@ export default function TabOneScreen() {
     }
   }, []);
 
-  // コンポーネントがマウントされたときにデータベースを初期化し、タスクを読み込む
-  useEffect(() => {
-    const setupDatabaseAndLoadTodos = async () => {
-      try {
-        await initDatabase();
-        await loadTodos();
-      } catch (err) {
-        console.error('Failed to initialize database', err);
-      }
-    };
-    setupDatabaseAndLoadTodos();
-  }, [loadTodos]);
-
-  // 新しいタスクを追加する関数
-  const handleAddTodo = async () => {
-    if (inputText.trim() === '') return;
-    try {
-      await addTodo(inputText);
-      setInputText('');
-      await loadTodos(); // タスク一覧を再読み込み
-    } catch (err) {
-      console.error('Failed to add todo', err);
-    }
-  };
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>タスク一覧</Text>
