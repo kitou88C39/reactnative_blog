@@ -13,16 +13,8 @@ export default function TabOneScreen({
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>タスク一覧</Text>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder='新しいタスクを入力'
-          value={inputText}
-          onChangeText={setInputText}
-        />
-        <Button title='追加' onPress={handleAddTodo} />
-      </View>
+      <Text style={styles.title}>Tab One</Text>
+      <View style={styles.inputContainer}></View>
       <FlatList
         data={todos}
         keyExtractor={(item) => item.id.toString()}
