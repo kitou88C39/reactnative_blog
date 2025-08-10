@@ -9,7 +9,7 @@ import { createTable, insert, select } from '../helpers/sqlite';
 export default function TabOneScreen({
   navigation,
 }: RootTabScreenProps<'TabOne'>) {
-  createTable();
+  createTable(); //diariesテーブルを作成
 
   return (
     <View style={styles.container}>
@@ -27,8 +27,8 @@ export default function TabOneScreen({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
     fontSize: 24,
