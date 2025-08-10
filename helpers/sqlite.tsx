@@ -12,7 +12,7 @@ export function createTable() {
   db.transaction((tx) => {
     tx.executeSql(
       // 実行したいSQL文
-      `CREATE TABLE if not exists diaries(
+      `CREATE TABLE if not exists diaries (
       id integer primary key not null,
       body text,
       emoji text,
