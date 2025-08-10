@@ -1,13 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import {
-  StyleSheet,
-  FlatList,
-  TextInput,
-  Button,
-  View,
-  Text,
-} from 'react-native';
-import { initDatabase, addTodo, fetchTodos } from '../helpers/sqlite';
+import { StyleSheet } from 'react-native';
+
+import EditScreenInfo from '../components/EditScreenInfo';
+import { Text, View } from '../components/Themed';
+
+import { createTable, insert, select } from '../helpers/sqlite';
 
 // タスクの型定義
 interface Todo {
