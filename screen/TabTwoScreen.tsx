@@ -31,12 +31,8 @@ export default function TabTwoScreen() {
       <Text style={styles.title}>Tab Two</Text>
       <FlatList
         data={feels}
-        renderItem={({ item }) => (
-          <Text style={styles.itemText}>
-            {item.emoji} {item.name}
-          </Text>
-        )}
-        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <Text>{item.emoji + '\n' + item.name}</Text>}
+        //keyExtractor={(item) => item.id}
       />
       <View
         style={styles.separator}
