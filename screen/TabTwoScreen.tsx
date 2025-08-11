@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
-import { query } from "firebase/firestore";
+import { query, collection, getDocs } from "firebase/firestore";
 import { firestore } from '../helpers/firebase';
 
 export default function TabTwoScreen() {
@@ -25,7 +25,12 @@ const getEmojies = async() => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>Tab Two</Text>
+      <FlatList
+        data={DATA}
+        renderItem={({item}) => <Item title={item.title} />}
+        keyExtractor={item => item.id}
+      />
       <View
         style={styles.separator}
         lightColor='#eee'
