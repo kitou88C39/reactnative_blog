@@ -9,7 +9,7 @@ import { firestore } from '../helpers/firebase';
 export default function TabTwoScreen() {
   useEffect({} => {}, []);
 
-    const getEmojies = () => {}
+const getEmojies = () => {}
 
   return (
     <View style={styles.container}>
