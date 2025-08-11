@@ -4,8 +4,10 @@ import { StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
+import { getFirestore } from '../helpers/firestore';
+
 export default function TabTwoScreen() {
-  useEffect({}=>{}, []);
+  useEffect({} => {}, []);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
