@@ -21,10 +21,6 @@ const getEmojies = () => {
     return tmpFeels;
 }
 
-
-
-}
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
