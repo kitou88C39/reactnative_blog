@@ -1,14 +1,4 @@
-// firebase.tsx
-
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-
-// 環境変数からFirebase設定を読み込む
-// .env ファイルに以下の形式で記述します:
-// EXPO_PUBLIC_FIREBASE_API_KEY="your-api-key"
-// EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN="your-auth-domain"
-// ...
 
 const firebaseConfig = {
   apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
@@ -19,9 +9,4 @@ const firebaseConfig = {
   appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Firebaseアプリを初期化
 const app = initializeApp(firebaseConfig);
-
-// Firebaseサービスを取得
-export const auth = getAuth(app);
-export const firestore = getFirestore(app);
