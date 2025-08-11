@@ -15,11 +15,11 @@ const getEmojies = () => {
     let tmpFeels: String[]=[];
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-        let _array: string[] = [];
-    })
-
-
-
+        let array: string[] = doc.data();
+        array['id'] = doc.id;
+        tmpFeels.push(array);
+    });
+    return tmpFeels;
 }
 
 
