@@ -10,7 +10,13 @@ import { firestore } from '../helpers/firebase';
 export default function TabTwoScreen() {
   useEffect({} => {}, []);
 
-const getEmojies = () => {}
+const getEmojies = () => {
+    const q = query(collection(firestore, 'feels'));
+    let tmpFeels: String[]=[];
+
+
+
+}
 
 
   return (
