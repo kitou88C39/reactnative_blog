@@ -30,7 +30,7 @@ export default function TabTwoScreen() {
       array['id'] = doc.id;
       tmpFeels.push(array);
     });
-    return tmpFeels;
+    setFeels(tmpFeels);
   };
 
 
@@ -38,8 +38,12 @@ export default function TabTwoScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Tab Two</Text>
       <FlatList
-        data={DATA}
-        renderItem={({ item }) => <Item title={item.title} />}
+        data={feels}
+        renderItem={({ item }) => (
+          <Text style={styles.itemText}>
+            {item.emoji} {item.name}
+          </Text>
+        )}
         keyExtractor={(item) => item.id}
       />
       <View
