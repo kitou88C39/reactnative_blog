@@ -4,7 +4,11 @@ import { StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
+
 import { query, collection, getDocs } from "firebase/firestore";
+
+import { query } from "firebase/firestore";
+
 import { firestore } from '../helpers/firebase';
 
 export default function TabTwoScreen() {
@@ -22,6 +26,7 @@ const getEmojies = async() => {
     });
     return tmpFeels;
 }
+
 
   return (
     <View style={styles.container}>
