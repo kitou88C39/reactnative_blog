@@ -3,18 +3,18 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-
-
+import { query } from "firebase/firestore";
 import { firestore } from '../helpers/firebase';
 
 export default function TabTwoScreen() {
   useEffect({} => {}, []);
 
-const getEmojies = () => {
+const getEmojies = async() => {
     const q = query(collection(firestore, 'feels'));
     let tmpFeels: String[]=[];
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
+
         let array: string[] = doc.data();
         array['id'] = doc.id;
         tmpFeels.push(array);
