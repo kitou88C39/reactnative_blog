@@ -1,35 +1,38 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
-import { query, collection, getDocs } from "firebase/firestore";
+import { query, collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../helpers/firebase';
 
 export default function TabTwoScreen() {
-  useEffect({} => {}, []);
+  const [feels, setFeels] = useState([]);
 
-const getEmojies = async() => {
+  useEffect(() => {
+    getEmojies();
+  }, []);
+
+  const getEmojies = async () => {
     const q = query(collection(firestore, 'feels'));
-    let tmpFeels: String[]=[];
+    let tmpFeels: string[] = [];
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-
-        let array: string[] = doc.data();
-        array['id'] = doc.id;
-        tmpFeels.push(array);
+      let array: string[] = doc.data();
+      array['id'] = doc.id;
+      tmpFeels.push(array);
     });
     return tmpFeels;
-}
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab Two</Text>
       <FlatList
         data={DATA}
-        renderItem={({item}) => <Item title={item.title} />}
-        keyExtractor={item => item.id}
+        renderItem={({ item }) => <Item title={item.title} />}
+        keyExtractor={(item) => item.id}
       />
       <View
         style={styles.separator}
