@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-
 import { query } from "firebase/firestore";
 import { firestore } from '../helpers/firebase';
 
@@ -22,6 +21,7 @@ const getEmojies = async() => {
     });
     return tmpFeels;
 }
+
 
   return (
     <View style={styles.container}>
