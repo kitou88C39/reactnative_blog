@@ -12,6 +12,10 @@ export default function TabTwoScreen() {
 const getEmojies = () => {
     const q = query(collection(firestore, 'feels'));
     let tmpFeels: String[]=[];
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        let _array: string[] = [];
+    })
 
 
 
