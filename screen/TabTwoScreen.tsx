@@ -12,7 +12,7 @@ export default function TabTwoScreen() {
         lightColor='#eee'
         darkColor='rgba(255,255,255,0.1)'
       />
-      <EditScreenInfo path='/screens/TabOneScreen.tsx' />
+      <EditScreenInfo path='/screens/TabTwoScreen.tsx' />
     </View>
   );
 }
@@ -24,13 +24,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 20,
-    textAlign: 'center',
   },
-  inputContainer: {
-    flexDirection: 'row',
+  separator: {
+    marginVertical: 30,
+    height: 1,
     marginBottom: 20,
   },
   input: {
