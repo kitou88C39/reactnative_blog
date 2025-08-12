@@ -35,15 +35,18 @@ export default function TabTwoScreen() {
   };
 
 
+  const emojiPress = (e) => {};
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab Two</Text>
       <FlatList
         data={feels}
         horizontal={true}
-        style={styles.list}
         renderItem={({ item }) => (
-          <Text style={styles.nameText}>{item.name}</Text>
+          <Text onPress={() => emojiPress()}>
+            {item.emoji + '\n' + item.name}
+          </Text>
         )}
       />
       <View
