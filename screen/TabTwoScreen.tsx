@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { StyleSheet, FlatList, TextInput, Button } from 'react-native';
+import { StyleSheet, FlatList, TextInput, Button, Alert } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 
@@ -48,10 +48,10 @@ export default function TabTwoScreen() {
       <TextInput
         style={styles.input}
         onChangeText={onChangeText}
-        value={text}
+        value='diary body'
       />
       <Button
-        title='Press me'
+        title='Write Diary'
         onPress={() => Alert.alert('Simple Button pressed')}
       />
     </View>
