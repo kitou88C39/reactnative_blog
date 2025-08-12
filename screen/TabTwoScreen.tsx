@@ -9,6 +9,7 @@ import { firestore } from '../helpers/firebase';
 export default function TabTwoScreen() {
   const [feels, setFeels] = useState([]);
   const [body, setBody] = useState('');
+  const [templates, setTemplates] = useState([]);
 
   useEffect(() => {
     getEmojies();
@@ -43,7 +44,7 @@ export default function TabTwoScreen() {
         darkColor='rgba(255,255,255,0.1)'
       />
       <FlatList
-        data={feels}
+        data={templates}
         horizontal={true}
         style={styles.list}
         renderItem={({ item }) => (
