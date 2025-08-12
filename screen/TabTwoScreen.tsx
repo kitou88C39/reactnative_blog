@@ -29,12 +29,11 @@ export default function TabTwoScreen() {
 
   const emojiPress = (name: string) => {
     const selectedEmoji: string[] = feels.find((v) => v.name === name);
-    setTemplates(selectedEmoji.templates);
+    setTemplates(templates);
   };
 
-  const emojiPress = (name: string) => {
-    const selectedEmoji: string[] = feels.find((v) => v.name === name);
-    setTemplates(selectedEmoji.templates);
+  const templatePress = (template: string) => {
+    setBody(selectedEmoji.templates);
   };
 
   return (
@@ -44,9 +43,7 @@ export default function TabTwoScreen() {
         data={feels}
         horizontal={true}
         renderItem={({ item }) => (
-          <Text onPress={() => emojiPress(item.name)}>
-            {item.emoji + '\n' + item.name}
-          </Text>
+          <Text onPress={() => emojiPress(item.name)}>{item}</Text>
         )}
       />
       <View
