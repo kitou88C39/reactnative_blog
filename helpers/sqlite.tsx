@@ -44,23 +44,12 @@ export const insertDiary(db: object = {}, body: string ='', selectedTemplate:obj
   db.transaction((tx) => {
     tx.executeSql(
       `INSERT INTO diaries (body, emoji, feel_id, updated_at, created_at) VALUES (?, ?, ?, ?, ?)`,
+      [body, selectedTemplate.emoji, selectedTemplate.id, createdAt, createdAt],
+      (sqlTxn, rest) => {
+
+      }
     )
   })
-  
-  
-  return new Promise((resolve, reject) => {
-    database.transaction((tx) => {
-      tx.executeSql(
-        `INSERT INTO diary (title, content, date) VALUES (?, ?, datetime('now', 'localtime'));`,
-        [title, content],
-        (_, result) => resolve(result.insertId),
-        (_, error) => {
-          reject(error);
-          return false;
-        }
-      );
-    });
-  });
 }
 
 /**
