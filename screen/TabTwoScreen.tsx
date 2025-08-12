@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, FlatList } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
@@ -39,8 +39,15 @@ export default function TabTwoScreen() {
       <Text style={styles.title}>Tab Two</Text>
       <FlatList
         data={feels}
-        renderItem={({ item }) => <Text>{item.emoji + '\n' + item.name}</Text>}
-        //keyExtractor={(item) => item.id}
+        horizontal={true}
+        style={styles.list}
+        renderItem={({ item }) => (
+          <View style={styles.itemContainer}>
+            <Text style={styles.emojiText}>{item.emoji}</Text>
+            <Text style={styles.nameText}>{item.name}</Text>
+          </View>
+        )}
+        keyExtractor={(item) => item.id}
       />
       <View
         style={styles.separator}
