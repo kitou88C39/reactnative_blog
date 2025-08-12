@@ -1,5 +1,7 @@
 import * as SQLite from 'expo-sqlite';
 
+import * as SQLite from 'expo-sqlite';
+
 /**
  * SQLiteと接続
  */
@@ -33,6 +35,22 @@ export function createTable() {
         return false;
       }
     );
+  });
+}
+
+export async function insertDiary(title: string, content: string) {
+  return new Promise((resolve, reject) => {
+    database.transaction((tx) => {
+      tx.executeSql(
+        `INSERT INTO diary (title, content, date) VALUES (?, ?, datetime('now', 'localtime'));`,
+        [title, content],
+        (_, result) => resolve(result.insertId),
+        (_, error) => {
+          reject(error);
+          return false;
+        }
+      );
+    });
   });
 }
 
