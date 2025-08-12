@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { StyleSheet, FlatList } from 'react-native';
+import { StyleSheet, FlatList, TextInput } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
@@ -53,6 +53,11 @@ export default function TabTwoScreen() {
         style={styles.separator}
         lightColor='#eee'
         darkColor='rgba(255,255,255,0.1)'
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeText}
+        value={text}
       />
       <EditScreenInfo path='/screens/TabTwoScreen.tsx' />
     </View>
