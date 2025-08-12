@@ -8,6 +8,7 @@ import { firestore } from '../helpers/firebase';
 
 export default function TabTwoScreen() {
   const [feels, setFeels] = useState([]);
+  const [body, setBody] = useState('');
 
   useEffect(() => {
     getEmojies();
@@ -33,10 +34,7 @@ export default function TabTwoScreen() {
         horizontal={true}
         style={styles.list}
         renderItem={({ item }) => (
-          <View style={styles.itemContainer}>
-            <Text style={styles.emojiText}>{item.emoji}</Text>
-            <Text style={styles.nameText}>{item.name}</Text>
-          </View>
+          <Text style={styles.nameText}>{item.name}</Text>
         )}
         keyExtractor={(item) => item.id}
       />
@@ -48,7 +46,8 @@ export default function TabTwoScreen() {
       <TextInput
         style={styles.input}
         onChangeText={onChangeText}
-        value='diary body'
+        value={body}
+        placeholder='diary content'
       />
       <Button
         title='Write Diary'
@@ -71,6 +70,6 @@ const styles = StyleSheet.create({
   separator: {
     marginVertical: 30,
     height: 1,
-    marginBottom: 20,
+    width: '80%',
   },
 });
