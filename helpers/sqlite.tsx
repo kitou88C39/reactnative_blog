@@ -44,12 +44,18 @@ export const insertDiary(db: object = {}, body: string ='', selectedTemplate:obj
   db.transaction((tx) => {
     tx.executeSql(
       `INSERT INTO diaries (body, emoji, feel_id, updated_at, created_at) VALUES (?, ?, ?, ?, ?)`,
-      [body, selectedTemplate.emoji, selectedTemplate.id, createdAt, createdAt],
+      [body, selectedTemplate.emoji, selectedTemplate.feel_id, createdAt, createdAt],
       (sqlTxn, rest) => {
-
-      }
+        console.log(sqlTxn);
+        console.log(`Diary added successfully`);
+        console.log(res);
+      },
+      error => {
+        console.log('ERROR');
+        console.log(error);
+      },
     )
-  })
+  });
 }
 
 /**
