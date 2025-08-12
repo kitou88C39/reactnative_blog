@@ -40,6 +40,12 @@ export function createTable() {
 
 export const insertDiary(db: object = {}, body: string ='', selectedTemplate:object = {}) => {
   const createdAt: string = dayjs().format("YYYY-MM-DD");
+  console.log(body, selectedTemplate, createdAt);
+  db.transaction((tx) => {
+    tx.executeSql(
+      `INSERT INTO diaries (body, emoji, feel_id, updated_at, created_at) VALUES (?, ?, ?, ?, ?)`,
+    )
+  })
   
   
   return new Promise((resolve, reject) => {
