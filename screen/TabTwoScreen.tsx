@@ -39,6 +39,10 @@ export default function TabTwoScreen() {
     setTemplates(selectedEmoji.templates);
   };
 
+  const emojiPress = (name: string) => {
+    const selectedEmoji: string[] = feels.find((v) => v.name === name);
+    setTemplates(selectedEmoji.templates);
+  };
   const emojiPress = (e) => {};
 
   return (
@@ -60,7 +64,11 @@ export default function TabTwoScreen() {
       />
       <FlatList
         data={templates}
-        renderItem={({ item }) => <Text>{item}</Text>}
+        renderItem={({ item }) => (
+          <Text onPress={() => templatePress(item.name)}>
+            {item.emoji + '\n' + item.name}
+          </Text>
+        )}
       />
       <TextInput
         //style={styles.input}
