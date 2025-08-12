@@ -36,16 +36,23 @@ export default function TabTwoScreen() {
         renderItem={({ item }) => (
           <Text style={styles.nameText}>{item.name}</Text>
         )}
-        keyExtractor={(item) => item.id}
       />
       <View
         style={styles.separator}
         lightColor='#eee'
         darkColor='rgba(255,255,255,0.1)'
       />
+      <FlatList
+        data={feels}
+        horizontal={true}
+        style={styles.list}
+        renderItem={({ item }) => (
+          <Text style={styles.nameText}>{item.name}</Text>
+        )}
+      />
       <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
+        //style={styles.input}
+        onChangeText={setBody}
         value={body}
         placeholder='diary content'
       />
