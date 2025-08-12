@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import { StyleSheet, FlatList, TextInput } from 'react-native';
+import { StyleSheet, FlatList, TextInput, Button } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 
@@ -59,7 +58,10 @@ export default function TabTwoScreen() {
         onChangeText={onChangeText}
         value={text}
       />
-      <EditScreenInfo path='/screens/TabTwoScreen.tsx' />
+      <Button
+        title='Press me'
+        onPress={() => Alert.alert('Simple Button pressed')}
+      />
     </View>
   );
 }
