@@ -81,20 +81,4 @@ const styles = StyleSheet.create({
     height: 1,
     marginBottom: 20,
   },
-  input: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    marginRight: 10,
-    borderRadius: 5,
-  },
-  list: {
-    flex: 1,
-  },
-  todoItem: {
-    padding: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-  },
 });
