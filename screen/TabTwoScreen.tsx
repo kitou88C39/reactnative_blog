@@ -45,11 +45,7 @@ export default function TabTwoScreen() {
       />
       <FlatList
         data={templates}
-        horizontal={true}
-        style={styles.list}
-        renderItem={({ item }) => (
-          <Text style={styles.nameText}>{item.name}</Text>
-        )}
+        renderItem={({ item }) => <Text>{item}</Text>}
       />
       <TextInput
         //style={styles.input}
