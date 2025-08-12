@@ -33,7 +33,7 @@ export default function TabTwoScreen() {
   };
 
   const templatePress = (template: string) => {
-    setBody(selectedEmoji.templates);
+    setBody(templates);
   };
 
   return (
