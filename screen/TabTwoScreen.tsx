@@ -3,7 +3,14 @@ import { StyleSheet, FlatList, TextInput, Button, Alert } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 
+
 import { query, collection, getDocs } from 'firebase/firestore';
+
+
+import { query, collection, getDocs } from "firebase/firestore";
+
+import { query } from "firebase/firestore";
+
 import { firestore } from '../helpers/firebase';
 
 export default function TabTwoScreen() {
@@ -26,6 +33,7 @@ export default function TabTwoScreen() {
     });
     setFeels(tmpFeels);
   };
+
 
   const emojiPress = (e) => {};
 
