@@ -38,7 +38,10 @@ export function createTable() {
   });
 }
 
-export async function insertDiary(title: string, content: string) {
+export const insertDiary(db: object = {}, body: string ='', selectedTemplate:object = {}) => {
+  const createdAt: string = dayjs().format("YYYY-MM-DD");
+  
+  
   return new Promise((resolve, reject) => {
     database.transaction((tx) => {
       tx.executeSql(
