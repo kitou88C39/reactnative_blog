@@ -44,3 +44,10 @@ options={{
 </ButtonTabNavigator>
   )
 }
+
+function TabBarIcon(props: {
+    name: React.ComponentProps<typeof FontAwesome>['name'];
+    color: string;
+}) {
+    
+    />
