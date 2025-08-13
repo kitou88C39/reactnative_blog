@@ -2,7 +2,6 @@ import { LinkingOptions } from '@react-navigation/native';
 import * as React from 'expo-linking';
 
 import { RootStackParamList } from '../types';
-import TabOneScreen from '../screen/TabOneScreen';
 
 const linking: LinkingOptions<RootStackParamList> = {
   prefixes: [Linking.createURL('/')],
@@ -10,9 +9,9 @@ const linking: LinkingOptions<RootStackParamList> = {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          Home: {
             screens: {
-              TabOneScreen: 'one',
+              HomeScreen: 'one',
             },
           },
           TabTwo: {
