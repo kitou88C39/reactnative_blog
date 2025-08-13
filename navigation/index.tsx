@@ -28,5 +28,19 @@ haederRight: () => (
     color={Color[colorSheme].text}
     style={{marginRight:15}}
 />
-  );
+</Pressable>
+  ),
+})}
+/>
+<ButtonTabScreen
+name="TabTwo"
+component={TabOneScreen}
+options={{
+    title: 'Tab Two',
+    tabBarIcon: ({color}) => <TabBarIcon name="code" color={color}/>,
+
+}}
+/>
+</ButtonTabNavigator>
+  )
 }
