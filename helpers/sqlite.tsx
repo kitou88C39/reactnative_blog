@@ -1,10 +1,9 @@
 import * as SQLite from 'expo-sqlite';
 
-
 /**
  * SQLiteと接続
  */
-const db = SQLite.openDatabase('tapdiary');
+export const db = SQLite.openDatabase('tapdiary');
 
 /**
  * テーブルを作成する
@@ -41,7 +40,7 @@ export const insertDiary(db: object = {}, body: string ='', selectedTemplate:obj
   const createdAt: string = dayjs().format("YYYY-MM-DD");
   console.log(body, selectedTemplate, createdAt);
   db.transaction((tx:any) => {
-    tx.executeSql('SQL文','SQL文に使うデータ','成功時の関数','失敗時の関数')
+    //tx.executeSql('SQL文','SQL文に使うデータ','成功時の関数','失敗時の関数')
     tx.executeSql(
       `INSERT INTO diaries (body, emoji, feel_id, updated_at, created_at) VALUES (?, ?, ?, ?, ?)`,
       [body, selectedTemplate.emoji, selectedTemplate.feel_id, createdAt, createdAt],
