@@ -1,8 +1,8 @@
 import { Pressable, useColorScheme } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen'; // TabTwoScreenのコンポーネントをインポート
+import TabOneScreen from '../screen/TabOneScreen';
+import TabTwoScreen from '../screen/TabTwoScreen';
 import { RootTabScreenProps } from '../types';
 
 function ButtonTabNavigator() {
