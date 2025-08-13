@@ -86,23 +86,23 @@ export const insertDiary(db: object = {}, body: string ='', selectedTemplate:obj
 /**
  * データを取得する
  */
-// function select() {
-//   db.transaction((tx) => {
-//     tx.executeSql(
-//       // 実行したいSQL文
-//       `select * from sample_table;`,
-//       // SQL文の引数
-//       [],
-//       // 成功時のコールバック関数
-//       (_, { rows }) => {
-//         console.log('select success');
-//         console.log('select result:' + JSON.stringify(rows._array));
-//       },
-//       () => {
-//         // 失敗時のコールバック関数
-//         console.log('select faile');
-//         return false;
-//       }
-//     );
-//   });
-// }
+function select() {
+  db.transaction((tx) => {
+    tx.executeSql(
+      // 実行したいSQL文
+      `select * from sample_table;`,
+      // SQL文の引数
+      [],
+      // 成功時のコールバック関数
+      (_, { rows }) => {
+        console.log('select success');
+        console.log('select result:' + JSON.stringify(rows._array));
+      },
+      () => {
+        // 失敗時のコールバック関数
+        console.log('select faile');
+        return false;
+      }
+    );
+  });
+}
