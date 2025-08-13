@@ -3,13 +3,15 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from "react";
+
 import Colors from '../constants/Colors';
-
-
-import { Pressable, useColorScheme } from 'react-native';
+import { useColorScheme } from '@/hooks/useColorScheme.web';
+import ModalScreen from "../screen/ModalScreen";
+import NotFoundScreen from '../screen/NotFoundScreen';
 import TabOneScreen from '../screen/TabOneScreen';
 import TabTwoScreen from '../screen/TabTwoScreen';
-import { RootTabScreenProps } from '../types';
+import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
+import { LinkingConfigOptions } from 'expo-router/build/getLinkingConfig';
 
 
 
