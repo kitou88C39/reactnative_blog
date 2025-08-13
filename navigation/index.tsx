@@ -12,8 +12,12 @@ import TabOneScreen from '../screen/TabOneScreen';
 import TabTwoScreen from '../screen/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import { LinkingConfigOptions } from 'expo-router/build/getLinkingConfig';
+import { ColorSchemeName } from 'react-native';
 
-
+export default function Navigation({colorSheme}: {colorSheme: ColorSchemeName}){
+    return(
+        <NavigationContainer theme={colorSheme === 'dark' ? DarkTheme : DefaultTheme}></NavigationContainer>)
+}
 
 
 function ButtonTabNavigator() {
