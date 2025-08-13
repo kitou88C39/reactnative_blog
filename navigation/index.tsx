@@ -23,8 +23,10 @@ haederRight: () => (
     style={({pressed}) => ({
         opacity: pressed ? 0.5 : 1,
     })}>
-
-
-    </ButtonTabNavigator>
+<FontAwesome
+    name="info-circle"
+    color={Color[colorSheme].text}
+    style={{marginRight:15}}
+/>
   );
 }
