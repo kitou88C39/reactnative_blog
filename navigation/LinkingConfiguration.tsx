@@ -2,10 +2,10 @@ import { LinkingOptions } from '@react-navigation/native';
 import * as React from 'expo-linking';
 
 import { RootStackParamList } from '../types';
-import TabOneScreen from '@/screen/TabOneScreen';
+import TabOneScreen from '../screen/TabOneScreen';
 
 const linking: LinkingOptions<RootStackParamList> = {
-  prefixes: [linking.createURL('/')],
+  prefixes: [Linking.createURL('/')],
   config: {
     screens: {
       Root: {
@@ -22,6 +22,9 @@ const linking: LinkingOptions<RootStackParamList> = {
           },
         },
       },
+      Modal: 'modal',
+      NotFound: '*',
     },
   },
 };
+export default linking;
