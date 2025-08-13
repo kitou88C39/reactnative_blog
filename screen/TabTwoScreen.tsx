@@ -40,7 +40,7 @@ export default function TabTwoScreen() {
   };
 
   const onSubmit = () => {
-    insertDiary(db, body, template);
+    insertDiary(db, body, selectedTemplate);
   };
 
   return (
