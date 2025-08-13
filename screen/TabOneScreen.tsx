@@ -10,7 +10,7 @@ export default function TabOneScreen({
   navigation,
 }: RootTabScreenProps<'TabOne'>) {
   createTable(); //diariesテーブルを作成
-
+  select();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>

@@ -45,7 +45,7 @@ export const insertDiary(db: object = {}, body: string ='', selectedTemplate:obj
     //tx.executeSql('SQL文','SQL文に使うデータ','成功時の関数','失敗時の関数')
     tx.executeSql(
       `INSERT INTO diaries (body, emoji, feel_id, updated_at, created_at) VALUES (?, ?, ?, ?, ?)`,
-      [body, selectedTemplate.emoji, selectedTemplate.feel_id, createdAt, createdAt],
+      [body, selectedTemplate.emoji, selectedTemplate.id, createdAt, createdAt],
       (sqlTxn, rest) => {
         console.log(sqlTxn);
         console.log(`Diary added successfully`);
@@ -90,7 +90,7 @@ function select() {
   db.transaction((tx) => {
     tx.executeSql(
       // 実行したいSQL文
-      `select * from sample_table;`,
+      `select * from diaries;`,
       // SQL文の引数
       [],
       // 成功時のコールバック関数
