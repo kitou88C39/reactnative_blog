@@ -5,6 +5,7 @@ import { Text, View } from '../components/Themed';
 
 import { query, collection, getDocs } from 'firebase/firestore';
 import { firestore } from '../helpers/firebase';
+import { db, insertDiary } from '../helpers/sqlite';
 
 export default function TabTwoScreen() {
   const [feels, setFeels] = useState([]);
@@ -36,6 +37,10 @@ export default function TabTwoScreen() {
     setBody(templates);
   };
 
+  const onSubmit = () => {
+    insertDiary();
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab Two</Text>
@@ -65,10 +70,7 @@ export default function TabTwoScreen() {
         value={body}
         placeholder='diary content'
       />
-      <Button
-        title='Write Diary'
-        onPress={() => Alert.alert('Simple Button pressed')}
-      />
+      <Button title='Write Diary' onPress={() => onSubmit()} />
     </View>
   );
 }
