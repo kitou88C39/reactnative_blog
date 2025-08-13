@@ -17,6 +17,7 @@ import { db, insertDiary } from '../helpers/sqlite';
 export default function TabTwoScreen() {
   const [feels, setFeels] = useState([]);
   const [body, setBody] = useState('');
+  const [selectedTemplate, setSelectedTemplate] = useState({});
   const [templates, setTemplates] = useState([]);
 
   useEffect(() => {
@@ -37,6 +38,7 @@ export default function TabTwoScreen() {
 
   const emojiPress = (name: string) => {
     const selectedEmoji: string[] = feels.find((v) => v.name === name);
+    setSelectedTemplate(selectedEmoji);
     setTemplates(templates);
   };
 
@@ -46,7 +48,7 @@ export default function TabTwoScreen() {
   const emojiPress = (e) => {};
 
   const onSubmit = () => {
-    insertDiary();
+    insertDiary(db, body, template);
   };
 
   return (
