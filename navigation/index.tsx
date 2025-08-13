@@ -1,3 +1,4 @@
+import TabOneScreen from '@/screen/TabOneScreen';
 import { useColorScheme } from 'react-native';
 
 function ButtonTabNavigator() {
@@ -8,6 +9,17 @@ function ButtonTabNavigator() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorSheme].tint,
       }}
-    ></ButtonTabNavigator>
+    >
+<ButtonTabScreen
+name="TabOne"
+component={TabOneScreen}
+options={({navigation}: RootTabScreenProps<'TabOne'>) => ({
+title:'Tab One',
+tabBarIcon: ({color}) => <TabBarIcon name='code' color={color} />
+haederRight: () => (
+    
+)
+
+    </ButtonTabNavigator>
   );
 }
