@@ -1,9 +1,18 @@
-import { Pressable, useColorScheme } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import * as React from "react";
 import Colors from '../constants/Colors';
+
+
+import { Pressable, useColorScheme } from 'react-native';
 import TabOneScreen from '../screen/TabOneScreen';
 import TabTwoScreen from '../screen/TabTwoScreen';
 import { RootTabScreenProps } from '../types';
+
+
+
 
 function ButtonTabNavigator() {
   const colorSheme = useColorScheme();
