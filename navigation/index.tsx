@@ -38,11 +38,10 @@ component={TabOneScreen}
 options={{
     title: 'Tab Two',
     tabBarIcon: ({color}) => <TabBarIcon name="code" color={color}/>,
-
 }}
 />
 </ButtonTabNavigator>
-  )
+  );
 }
 
 function TabBarIcon(props: {
@@ -50,4 +49,6 @@ function TabBarIcon(props: {
     color: string;
 }) {
     
-    />
+    return
+        <FontAwesome size={30} style={{marginBottom: -3}} {...props}}/>;
+}
