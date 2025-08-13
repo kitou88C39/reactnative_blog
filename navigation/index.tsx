@@ -1,6 +1,9 @@
-import TabOneScreen from '@/screen/TabOneScreen';
 import { Pressable, useColorScheme } from 'react-native';
-import { opacity } from 'react-native-reanimated/lib/typescript/Colors';
+import { FontAwesome } from '@expo/vector-icons';
+import Colors from '../constants/Colors';
+import TabOneScreen from '../screens/TabOneScreen';
+import TabTwoScreen from '../screens/TabTwoScreen'; // TabTwoScreenのコンポーネントをインポート
+import { RootTabScreenProps } from '../types';
 
 function ButtonTabNavigator() {
   const colorSheme = useColorScheme();
