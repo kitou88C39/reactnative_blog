@@ -48,7 +48,7 @@ export default function TabTwoScreen() {
   const emojiPress = (e) => {};
 
   const onSubmit = () => {
-    insertDiary(db, body, template);
+    insertDiary(db, body, selectedTemplate);
   };
 
   return (
