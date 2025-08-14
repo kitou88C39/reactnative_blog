@@ -1,8 +1,9 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from "react";
+import { ColorSchemeName, Pressable } from 'react-native';
 
 import Colors from '../constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme.web';
@@ -11,9 +12,8 @@ import NotFoundScreen from '../screen/NotFoundScreen';
 import HomeScreen from '../screen/HomeScreen';
 import TabTwoScreen from '../screen/CreateScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../type';
-import { LinkingConfigOptions } from 'expo-router/build/getLinkingConfig';
-import { ColorSchemeName } from 'react-native';
-import { HeaderShownContext } from '@react-navigation/elements';
+import LinkingConfigOption from './LinkingConfigOption';
+
 
 export default function Navigation({colorSheme}: {colorSheme: ColorSchemeName}){
     return (
