@@ -8,7 +8,7 @@ import Colors from '../constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme.web';
 import ModalScreen from "../screen/ModalScreen";
 import NotFoundScreen from '../screen/NotFoundScreen';
-import TabOneScreen from '../screen/TabOneScreen';
+import HomeScreen from '../screen/HomeScreen';
 import TabTwoScreen from '../screen/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import { LinkingConfigOptions } from 'expo-router/build/getLinkingConfig';
