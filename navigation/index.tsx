@@ -9,7 +9,7 @@ import { useColorScheme } from '@/hooks/useColorScheme.web';
 import ModalScreen from "../screen/ModalScreen";
 import NotFoundScreen from '../screen/NotFoundScreen';
 import HomeScreen from '../screen/HomeScreen';
-import TabTwoScreen from '../screen/TabTwoScreen';
+import TabTwoScreen from '../screen/CreateScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../type';
 import { LinkingConfigOptions } from 'expo-router/build/getLinkingConfig';
 import { ColorSchemeName } from 'react-native';
