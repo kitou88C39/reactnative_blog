@@ -25,22 +25,22 @@ export default function Navigation({colorSheme}: {colorSheme: ColorSchemeName}){
 }
 
 
-
+const Stack = createStackNavigator<RootStackParamList>();
 
 function ButtonTabNavigator() {
   const colorSheme = useColorScheme();
   return (
     <ButtonTabNavigator
-      initialRouteName='TabOne'
+      initialRouteName='Home'
       screenOptions={{
         tabBarActiveTintColor: Colors[colorSheme].tint,
       }}
     >
 <ButtonTabScreen
-name="TabOne"
+name="Home"
 component={TabOneScreen}
-options={({navigation}: RootTabScreenProps<'TabOne'>) => ({
-title:'Tab One',
+options={({navigation}: RootTabScreenProps<'Home'>) => ({
+title:'Home',
 tabBarIcon: ({color}) => <TabBarIcon name='code' color={color} />
 haederRight: () => (
     <Pressable
