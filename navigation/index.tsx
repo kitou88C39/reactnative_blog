@@ -60,8 +60,8 @@ haederRight: () => (
 })}
 />
 <ButtonTabScreen
-name="TabTwo"
-component={TabTwoScreen}
+name="CreateScreen"
+component={CreateScreen}
 options={{
     title: 'Tab Two',
     HeaderShown:false,
