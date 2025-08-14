@@ -15,8 +15,13 @@ import { LinkingConfigOptions } from 'expo-router/build/getLinkingConfig';
 import { ColorSchemeName } from 'react-native';
 
 export default function Navigation({colorSheme}: {colorSheme: ColorSchemeName}){
-    return(
-        <NavigationContainer theme={colorSheme === 'dark' ? DarkTheme : DefaultTheme}></NavigationContainer>)
+    return (
+        <NavigationContainer
+        linking={LinkingConfiguration}
+        theme={colorSheme === 'dark' ? DarkTheme : DefaultTheme}>
+            <RootNavigator />
+        </NavigationContainer>
+    );
 }
 
 
