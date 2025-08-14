@@ -13,6 +13,7 @@ import TabTwoScreen from '../screen/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../type';
 import { LinkingConfigOptions } from 'expo-router/build/getLinkingConfig';
 import { ColorSchemeName } from 'react-native';
+import { HeaderShownContext } from '@react-navigation/elements';
 
 export default function Navigation({colorSheme}: {colorSheme: ColorSchemeName}){
     return (
@@ -33,7 +34,7 @@ function ButtonTabNavigator() {
     <ButtonTabNavigator
       initialRouteName='Home'
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorSheme].tint,
+        tabBarActiveTintColor: Colors[colorScheme].tint,
       }}
     >
 <ButtonTabScreen
@@ -41,17 +42,18 @@ name="Home"
 component={TabOneScreen}
 options={({navigation}: RootTabScreenProps<'Home'>) => ({
 title:'Home',
+HeaderShown:false,
 tabBarIcon: ({color}) => <TabBarIcon name='code' color={color} />
 haederRight: () => (
-    <Pressable
+  <Pressable
     onPress={() => navigation.navigate('Modal')}
     style={({pressed}) => ({
         opacity: pressed ? 0.5 : 1,
     })}>
 <FontAwesome
     name="info-circle"
-    color={Color[colorSheme].text}
-    style={{marginRight:15}}
+    color={Color[colorScheme].text}
+    style={{marginRight: 15}}
 />
 </Pressable>
   ),
@@ -59,9 +61,10 @@ haederRight: () => (
 />
 <ButtonTabScreen
 name="TabTwo"
-component={TabOneScreen}
+component={TabTwoScreen}
 options={{
     title: 'Tab Two',
+    HeaderShown:false,
     tabBarIcon: ({color}) => <TabBarIcon name="code" color={color}/>,
 }}
 />
